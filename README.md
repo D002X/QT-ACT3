@@ -10,7 +10,7 @@ Fonctionnalités
     Affichage des données dans une interface graphique avec QTableView.
     Interface simple avec une mise en page verticale pour afficher le tableau.
 
-**Prérequis**
+# Prérequis
 
 Avant d'exécuter ce programme, assurez-vous que vous avez installé les éléments suivants :
 
@@ -52,22 +52,22 @@ Le projet doit être configuré pour utiliser le module Qt SQL. Assurez-vous d'a
 QT += sql
 
 ```
-**Installation**
+# Installation
 
-1.**Clonez ce repository ou copiez le code source dans un répertoire de votre choix*.
+1.*Clonez ce repository ou copiez le code source dans un répertoire de votre choix*.
 
-2.**Assurez-vous d'avoir correctement installé Qt et MySQL*.
+2.*Assurez-vous d'avoir correctement installé Qt et MySQL*.
 
-3.**Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt*.
+3.*Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt*.
 
-4.**Vérifiez les paramètres de connexion dans le code source* (nom d'utilisateur, mot de passe, hôte, base de données)*.
+4.*Vérifiez les paramètres de connexion dans le code source* (nom d'utilisateur, mot de passe, hôte, base de données)*.
 ```
 db.setHostName("localhost");
 db.setDatabaseName("jeu");
 db.setUserName("etudiant");
 db.setPassword("Passciel#2");
 ```
-5.**Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu*.
+5.*Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu*.
 
 # Fonctionnement
 
