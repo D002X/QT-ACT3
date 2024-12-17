@@ -2,8 +2,10 @@
 
 **Qt Database Viewer - Affichage de données MySQL**
 
-Ce programme en C++ utilise Qt pour se connecter à une base de données MySQL et afficher les données dans une vue sous forme de tableau (QTableView). Il permet de se connecter à une base de données, de charger les données d'une table spécifique et de les afficher dans une interface graphique.
-Fonctionnalités
+Ce programme en C++ utilise Qt pour se connecter à une base de données MySQL et afficher les données dans une vue sous forme de tableau (QTableView). 
+Il permet de se connecter à une base de données, de charger les données d'une table spécifique et de les afficher dans une interface graphique.
+
+**Fonctionnalités :**
 
     Connexion à une base de données MySQL.
     Chargement des données depuis une table MySQL dans un modèle (QSqlTableModel).
@@ -54,20 +56,20 @@ QT += sql
 ```
 # Installation
 
-1.*Clonez ce repository ou copiez le code source dans un répertoire de votre choix*.
+1.**Clonez ce repository ou copiez le code source dans un répertoire de votre choix**.
 
-2.*Assurez-vous d'avoir correctement installé Qt et MySQL*.
+2.**Assurez-vous d'avoir correctement installé Qt et MySQL**.
 
-3.*Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt*.
+3.**Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt**.
 
-4.*Vérifiez les paramètres de connexion dans le code source* (nom d'utilisateur, mot de passe, hôte, base de données)*.
+4.**Vérifiez les paramètres de connexion dans le code source* (nom d'utilisateur, mot de passe, hôte, base de données)**.
 ```
 db.setHostName("localhost");
 db.setDatabaseName("jeu");
 db.setUserName("etudiant");
 db.setPassword("Passciel#2");
 ```
-5.*Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu*.
+5.**Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu**.
 
 # Fonctionnement
 
@@ -141,5 +143,5 @@ Lorsque vous changez la note sur QT,vous devez refaire la commande :
 
     Select *from jeu;
     
-afin de voir la nouvelle note.
+Afin de voir la nouvelle note.
     
