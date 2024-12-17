@@ -62,7 +62,7 @@ QT += sql
 
 3.**Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt**.
 
-4.**Vérifiez les paramètres de connexion dans le code source** (nom d'utilisateur, mot de passe, hôte, base de données)**.
+4.**Vérifiez les paramètres de connexion dans le code source** **(nom d'utilisateur, mot de passe, hôte, base de données)**.
 ```
 db.setHostName("localhost");
 db.setDatabaseName("jeu");
