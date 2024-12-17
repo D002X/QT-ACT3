@@ -99,7 +99,7 @@ Exemple :
 ```
 Aucune donnée trouvée dans la table `jeu`.
 ```
-Exemple de sortie
+*Exemple de sortie*
 
 Si la base de données contient des données, vous devriez voir une fenêtre avec une table contenant des colonnes comme id, nom,club,notes. La fenêtre ressemblera à ceci :
 ```
