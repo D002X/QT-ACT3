@@ -14,7 +14,7 @@ Fonctionnalités
 
 Avant d'exécuter ce programme, assurez-vous que vous avez installé les éléments suivants :
 
-1.**Qt Framework*
+1.*Qt Framework*
 
 Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharger et installer Qt à partir du site officiel :
 
