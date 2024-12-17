@@ -12,25 +12,25 @@ Fonctionnalités
 
 # Prérequis
 
-Avant d'exécuter ce programme, assurez-vous que vous avez installé les éléments suivants :
+**Avant d'exécuter ce programme, assurez-vous que vous avez installé les éléments suivants :**
 
-1.*Qt Framework*
+1.**Qt Framework**
 
-Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharger et installer Qt à partir du site officiel :
+*Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharger et installer Qt à partir du site officiel :*
 
 https://www.qt.io/download
 
-2. *MySQL*
+2. **MySQL**
 
-Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.
+*Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.*
 
-3. *Driver MySQL pour Qt*
+3. **Driver MySQL pour Qt**
 
-Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.
+*Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.*
 
-4. *Base de données MySQL*
+4. **Base de données MySQL**
 
-La table utilisée dans ce programme s'appelle jeu. Vous devez avoir une base de données MySQL avec une table de ce nom. Voici un exemple de structure pour la table jeu :
+*La table utilisée dans ce programme s'appelle jeu. Vous devez avoir une base de données MySQL avec une table de ce nom. Voici un exemple de structure pour la table jeu :*
 ```
 CREATE TABLE jeu (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -39,15 +39,15 @@ CREATE TABLE jeu (
     note INT
 );
 ```
-Inserez maintenant dans le tableau jeu pour chaque partie (nom , club , notes) avec des valeurs :
+*Inserez maintenant dans le tableau jeu pour chaque partie (nom , club , notes) avec des valeurs :*
 ```
  INSERT INTO jeu (nom, club, notes)
     VALUES ('Ronaldo', 'Madrid', 3)
     VALUES ('Grizou','Barca', 2);
 ```
-5. *Configuration du projet*
+5. **Configuration du projet**
 
-Le projet doit être configuré pour utiliser le module Qt SQL. Assurez-vous d'ajouter la ligne suivante dans votre fichier .pro :
+*Le projet doit être configuré pour utiliser le module Qt SQL. Assurez-vous d'ajouter la ligne suivante dans votre fichier .pro :*
 ```
 QT += sql
 
