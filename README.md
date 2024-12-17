@@ -37,7 +37,8 @@ Exécutez la commande SQL suivante pour créer la base de données et la table j
     );
 
     INSERT INTO jeu (nom, club, note)
-    VALUES ('Messi', 'PSG', 99);
+    VALUES ('Ronaldo', 'Madrid', 3)
+    VALUES ('Grizou','Barca', 2);
 
 Cette commande crée une base de données jeu et une table jeu avec les colonnes id, nom, club, et note.
 
@@ -50,9 +51,10 @@ Cette commande crée une base de données jeu et une table jeu avec les colonnes
 
 3.Dans mes fichier .cpp faites en sorte que la connexion à la base de donnés soit bien mis avec vos information 
 
-    db.setDatabaseName("jeu");  // Nom de la base de données
+    db.setHostName("localhost");  // cette fonction est utilisée pour spécifier le nom d'hôte du serveur de base de données auquel vous souhaitez vous connecter.
+    db.setDatabaseName("jeu");  // Nom de la base de données qui contient
     db.setUserName("etudiant"); // Nom d'utilisateur pour se connecter
-    db.setPassword("Passciel2"); // Mot de passe pour se connecter
+    db.setPassword("Passciel#2"); // Mot de passe pour se connecter à l'utilisateur etudiant
 Quand vous voyez ceci ils faut que vous mettez vos information de votre base de données.
 
 Maintenant il vous reste plus qu'à compiler le projet sur QT et d'effectuer des test.
