@@ -20,7 +20,7 @@ Il permet de se connecter à une base de données, de charger les données d'une
 
 *Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharger et installer Qt à partir du site officiel :*
 
-https://www.qt.io/download
+https://www.qt.io/download-qt-installer
 
 2. **MySQL**
 
@@ -30,6 +30,14 @@ https://www.qt.io/download
 
 *Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.*
 
+**Taper la commande suivante sous le terminal :**
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+**Télécharger ensuite les libraries qui manque :**
+```
+sudo apt install build-essential libgl1-mesa-dev libxkbcommon-x11-0
+```
 4. **Base de données MySQL**
 
 *La table utilisée dans ce programme s'appelle jeu. Vous devez avoir une base de données MySQL avec une table de ce nom. Voici un exemple de structure pour la table jeu :*
@@ -56,13 +64,13 @@ QT += sql
 ```
 # Installation
 
-1.**Clonez ce repository ou copiez le code source dans un répertoire de votre choix**.
+1. **Clonez ce repository ou copiez le code source dans un répertoire de votre choix**.
 
-2.**Assurez-vous d'avoir correctement installé Qt et MySQL**.
+2. **Assurez-vous d'avoir correctement installé Qt et MySQL**.
 
-3.**Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt**.
+3. **Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt**.
 
-4.**Vérifiez les paramètres de connexion dans le code source** **(nom d'utilisateur, mot de passe, hôte, base de données)**.
+4. **Vérifiez les paramètres de connexion dans le code source** **(nom d'utilisateur, mot de passe, hôte, base de données)**.
 ```
 db.setHostName("localhost");
 db.setDatabaseName("jeu");
@@ -143,5 +151,5 @@ Lorsque vous changez la note sur QT,vous devez refaire la commande :
 
     Select *from jeu;
     
-Afin de voir la nouvelle note.
+Afin de voir les nouvelles notes.
     
