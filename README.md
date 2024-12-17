@@ -1,77 +1,116 @@
 # requeteSQL
 
-Objectif
-Ce projet consiste à créer une base de données MySQL appelée "jeu" avec une table "jeu" contenant les colonnes suivantes :
+**Qt Database Viewer - Affichage de données MySQL**
 
-    nom : le nom du joueur.
-    club : le club auquel appartient le joueur.
-    note : une note entre 0 et 100 pour chaque joueur.
+Ce programme en C++ utilise Qt pour se connecter à une base de données MySQL et afficher les données dans une vue sous forme de tableau (QTableView). Il permet de se connecter à une base de données, de charger les données d'une table spécifique et de les afficher dans une interface graphique.
+Fonctionnalités
 
-Ensuite, nous utiliserons Qt pour créer une interface permettant de modifier la note d'un joueur, et de sauvegarder cette modification directement dans la base de données MySQL.
+    Connexion à une base de données MySQL.
+    Chargement des données depuis une table MySQL dans un modèle (QSqlTableModel).
+    Affichage des données dans une interface graphique avec QTableView.
+    Interface simple avec une mise en page verticale pour afficher le tableau.
 
-Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
+**Prérequis**
+
+Avant d'exécuter ce programme, assurez-vous que vous avez installé les éléments suivants :
+
+1.**Qt Framework*
+
+Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharger et installer Qt à partir du site officiel :
+
+https://www.qt.io/download
+
+2. **MySQL*
+
+Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.
+
+3. **Driver MySQL pour Qt*
+
+Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.
+
+4. **Base de données MySQL*
+
+La table utilisée dans ce programme s'appelle jeu. Vous devez avoir une base de données MySQL avec une table de ce nom. Voici un exemple de structure pour la table jeu :
 ```
-Qt Creator : Téléchargez et installez Qt Creator.
-
-MySQL : Vous devez avoir une instance MySQL fonctionnelle. 
-
-Si vous n'avez pas encore MySQL installé, vous pouvez le télécharger depuis MySQL.
-
-Driver MySQL pour Qt : Assurez-vous d'avoir installé le driver MySQL pour Qt. 
-
-Cela est souvent inclus dans l'installation de Qt, mais vérifiez qu'il est bien installé dans votre version de Qt.
- 
-Maintenant, installer mes fichiers présent dans ce répertoire.
+CREATE TABLE jeu (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    club VARCHAR(100),
+    note INT
+);
 ```
-Suivez ces instruction pour éxécuter mon projet.
+5. **Configuration du projet*
 
-1. Créer la base de données MySQL
-Créer la base de données jeu
+Le projet doit être configuré pour utiliser le module Qt SQL. Assurez-vous d'ajouter la ligne suivante dans votre fichier .pro :
+```
+QT += sql
 
-Connectez-vous à votre serveur MySQL avec un outil comme MySQL Workbench ou en utilisant la ligne de commande.
-Exécutez la commande SQL suivante pour créer la base de données et la table jeu :
-   
-    CREATE DATABASE jeu;
+```
+**Installation**
 
-    USE jeu;
+1.**Clonez ce repository ou copiez le code source dans un répertoire de votre choix*.
 
-    CREATE TABLE jeu (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        nom VARCHAR(100) NOT NULL,
-        club VARCHAR(100) NOT NULL,
-        note INT CHECK(note BETWEEN 0 AND 100)
-    );
+2.**Assurez-vous d'avoir correctement installé Qt et MySQL*.
 
-    INSERT INTO jeu (nom, club, note)
-    VALUES ('Ronaldo', 'Madrid', 3)
-    VALUES ('Grizou','Barca', 2);
+3.**Ouvrez le projet avec Qt Creator ou un autre environnement de développement compatible avec Qt*.
 
-Cette commande crée une base de données jeu et une table jeu avec les colonnes id, nom, club, et note.
+4.**Vérifiez les paramètres de connexion dans le code source* (nom d'utilisateur, mot de passe, hôte, base de données)*.
+```
+db.setHostName("localhost");
+db.setDatabaseName("jeu");
+db.setUserName("etudiant");
+db.setPassword("Passciel#2");
+```
+5.**Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu*.
 
+**Fonctionnement**
 
-2. Ouvrir le projet dans Qt Creator
+Lorsque vous exécutez le programme, voici ce qui se passe :
 
-    Ouvrez Qt Creator.
-    Cliquez sur Fichier > Ouvrir le projet... et sélectionnez le fichier .pro de votre projet (votre-projet.pro).
-    Qt Creator va analyser et configurer le projet automatiquement.
+    Connexion à la base de données MySQL : Le programme se connecte à la base de données MySQL avec les informations spécifiées dans le code source.
 
-3.Dans mes fichier .cpp faites en sorte que la connexion à la base de donnés soit bien mis avec vos information 
+    Chargement des données : Une fois la connexion réussie, le programme charge les données de la table jeu à l'aide de la classe QSqlTableModel.
 
-    db.setHostName("localhost");  // cette fonction est utilisée pour spécifier le nom d'hôte du serveur de base de données auquel vous souhaitez vous connecter.
-    db.setDatabaseName("jeu");  // Nom de la base de données qui contient
-    db.setUserName("etudiant"); // Nom d'utilisateur pour se connecter
-    db.setPassword("Passciel#2"); // Mot de passe pour se connecter à l'utilisateur etudiant
+    Affichage des données : Les données sont affichées dans une interface graphique dans un widget QTableView.
+
+    Interface utilisateur : La fenêtre s'affiche avec les données dans un tableau. Le tableau peut être redimensionné, et les colonnes sont ajustées automatiquement en fonction de leur contenu.
     
-Quand vous voyez ceci ils faut que vous mettez vos information de votre base de données.
+**Erreurs possibles**
 
-4.Modification qui impact directement au changement de note à la base de donnée
+Erreur de connexion à la base de données : Si la connexion échoue, un message d'erreur détaillant la cause de l'échec sera affiché dans la sortie de débogage. 
+
+Cela peut être dû à un mauvais nom d'utilisateur, mot de passe ou base de données.
+
+Exemple de message d'erreur :
+```
+La connexion à la base de données a échoué : QSqlError("", "Access denied for user 'etudiant'@'localhost'", "28000")
+```
+**Table vide** : Si la table jeu est vide, un message sera affiché dans la sortie de débogage.
+
+Exemple :
+```
+Aucune donnée trouvée dans la table `jeu`.
+```
+Exemple de sortie
+
+Si la base de données contient des données, vous devriez voir une fenêtre avec une table contenant des colonnes comme id, nom,club,note. La fenêtre ressemblera à ceci :
+```
++----+-------------+-------+
+| id | nom         | score |
++----+-------------+-------+
+| 1  | Joueur1     | 100   |
+| 2  | Joueur2     | 150   |
+| 3  | Joueur3     | 120   |
++----+-------------+-------+
+```
+**Modification qui impact directement au changement de note à la base de donnée**
 ```
  QSqlTableModel *model = new QSqlTableModel();    // Configuration du modèle pour représenter les données
     model->setTable("jeu"); // Nom de la table à afficher
     model->setEditStrategy(QSqlTableModel::OnFieldChange); // Modifications directement sur la base de donnée "jeu".
     model->select(); // Charger les données modifiés depuis la table jeu.
 ```
-5.Vérification de l'existence de donnée dans le tableau 
+**Vérification de l'existence de donnée dans le tableau** 
 ```
 if (model->rowCount() == 0) {
         qDebug() << "Aucune donnée trouvée dans la table `jeu`.";
@@ -81,13 +120,13 @@ Cette conditions permettra de vérifier si la table jeu est bien inclus depuis l
 
 Maintenant il vous reste plus qu'à compiler le projet sur QT et d'effectuer des test.
 
-6.Compiler et Lancer l'Application
+**Compiler et Lancer l'Application**
 
 Cliquez sur le bouton Compiler dans Qt Creator.
 
 Une fois la compilation terminée, cliquez sur le bouton Exécuter pour lancer l'application.
 
-7.Tester l'Application
+**Tester l'Application**
 
 Les information de votre base de donnés est sensé apparaitre.
 
@@ -98,4 +137,4 @@ Lorsque vous changez la note sur QT,vous devez refaire la commande :
     Select *from jeu;
     
 afin de voir la nouvelle note.
-
+    
