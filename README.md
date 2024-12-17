@@ -56,7 +56,23 @@ Cette commande crée une base de données jeu et une table jeu avec les colonnes
     db.setDatabaseName("jeu");  // Nom de la base de données qui contient
     db.setUserName("etudiant"); // Nom d'utilisateur pour se connecter
     db.setPassword("Passciel#2"); // Mot de passe pour se connecter à l'utilisateur etudiant
+    
 Quand vous voyez ceci ils faut que vous mettez vos information de votre base de données.
+
+4.Modification qui impact directement au changement de note à la base de donnée
+```
+ QSqlTableModel *model = new QSqlTableModel();    // Configuration du modèle pour représenter les données
+    model->setTable("jeu"); // Nom de la table à afficher
+    model->setEditStrategy(QSqlTableModel::OnFieldChange); // Modifications directement sur la base de donnée "jeu".
+    model->select(); // Charger les données modifiés depuis la table jeu.
+```
+5.Vérification de l'existence de donnée dans le tableau 
+```
+if (model->rowCount() == 0) {
+        qDebug() << "Aucune donnée trouvée dans la table `jeu`.";
+    }
+```
+Cette conditions permettra de vérifier si la table jeu est bien inclus depuis la partie Mysql ou non.
 
 Maintenant il vous reste plus qu'à compiler le projet sur QT et d'effectuer des test.
 
@@ -72,3 +88,4 @@ Lorsque vous changez la note sur QT,vous devez refaire la commande :
     Select *from jeu;
     
 afin de voir la nouvelle note.
+
