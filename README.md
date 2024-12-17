@@ -20,15 +20,15 @@ Ce programme nécessite Qt 5 ou une version supérieure. Vous pouvez télécharg
 
 https://www.qt.io/download
 
-2. **MySQL*
+2. *MySQL*
 
 Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.
 
-3. **Driver MySQL pour Qt*
+3. *Driver MySQL pour Qt*
 
 Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.
 
-4. **Base de données MySQL*
+4. *Base de données MySQL*
 
 La table utilisée dans ce programme s'appelle jeu. Vous devez avoir une base de données MySQL avec une table de ce nom. Voici un exemple de structure pour la table jeu :
 ```
@@ -39,7 +39,13 @@ CREATE TABLE jeu (
     note INT
 );
 ```
-5. **Configuration du projet*
+Inserez maintenant dans le tableau jeu pour chaque partie (nom , club , notes) avec des valeurs :
+```
+ INSERT INTO jeu (nom, club, notes)
+    VALUES ('Ronaldo', 'Madrid', 3)
+    VALUES ('Grizou','Barca', 2);
+```
+5. *Configuration du projet*
 
 Le projet doit être configuré pour utiliser le module Qt SQL. Assurez-vous d'ajouter la ligne suivante dans votre fichier .pro :
 ```
@@ -63,7 +69,7 @@ db.setPassword("Passciel#2");
 ```
 5.**Compilez et exécutez le programme. Une fenêtre devrait s'ouvrir et afficher les données de la table jeu*.
 
-**Fonctionnement**
+# Fonctionnement
 
 Lorsque vous exécutez le programme, voici ce qui se passe :
 
@@ -93,15 +99,14 @@ Aucune donnée trouvée dans la table `jeu`.
 ```
 Exemple de sortie
 
-Si la base de données contient des données, vous devriez voir une fenêtre avec une table contenant des colonnes comme id, nom,club,note. La fenêtre ressemblera à ceci :
+Si la base de données contient des données, vous devriez voir une fenêtre avec une table contenant des colonnes comme id, nom,club,notes. La fenêtre ressemblera à ceci :
 ```
-+----+-------------+-------+
-| id | nom         | score |
-+----+-------------+-------+
-| 1  | Joueur1     | 100   |
-| 2  | Joueur2     | 150   |
-| 3  | Joueur3     | 120   |
-+----+-------------+-------+
++----+-------------+-------+---------+
+| id | nom        | club |  notes    |
++----+-------------+-------+---------+
+| 1  | Ronaldo    |Madrid|   3       |
+| 2  | Grizou     |Barca |   2       |
++----+-------------+-------+---------+
 ```
 **Modification qui impact directement au changement de note à la base de donnée**
 ```
