@@ -1,7 +1,7 @@
 # requeteSQL
 
 Objectif
-Ce projet consiste à créer une base de données MySQL appelée jeu avec une table jeu contenant les colonnes suivantes :
+Ce projet consiste à créer une base de données MySQL appelée "jeu" avec une table "jeu" contenant les colonnes suivantes :
 
     nom : le nom du joueur.
     club : le club auquel appartient le joueur.
