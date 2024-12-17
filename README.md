@@ -81,13 +81,18 @@ Cette conditions permettra de vérifier si la table jeu est bien inclus depuis l
 
 Maintenant il vous reste plus qu'à compiler le projet sur QT et d'effectuer des test.
 
-4.Compiler et Lancer l'Application
-    Cliquez sur le bouton Compiler dans Qt Creator.
-    Une fois la compilation terminée, cliquez sur le bouton Exécuter pour lancer l'application.
+6.Compiler et Lancer l'Application
 
-5.Tester l'Application
+Cliquez sur le bouton Compiler dans Qt Creator.
+
+Une fois la compilation terminée, cliquez sur le bouton Exécuter pour lancer l'application.
+
+7.Tester l'Application
+
 Les information de votre base de donnés est sensé apparaitre.
+
 Modifiez les notes dans la table ou changez la depuis l'interface QT pour ajuster la note d'un joueur.
+
 Lorsque vous changez la note sur QT,vous devez refaire la commande :
 
     Select *from jeu;
