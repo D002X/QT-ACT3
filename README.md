@@ -49,7 +49,7 @@ CREATE TABLE jeu (
     note INT
 );
 ```
-*Inserez maintenant dans le tableau jeu pour chaque partie (nom , club , notes) avec des valeurs :*
+*Inserez maintenant dans le tableau jeu pour que chaque partie (nom , club , notes) ont des valeurs :*
 ```
  INSERT INTO jeu (nom, club, notes)
     VALUES ('Ronaldo', 'Madrid', 3)
