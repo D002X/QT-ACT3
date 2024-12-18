@@ -1,4 +1,4 @@
-# requeteSQL
+# RequeteSQL
 
 **Qt Database Viewer - Affichage de données MySQL**
 
