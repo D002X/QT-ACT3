@@ -139,6 +139,9 @@ Maintenant il vous reste plus qu'à compiler le projet sur QT et d'effectuer des
 
 Cliquez sur le bouton Compiler dans Qt Creator.
 
+![Texte alternatif de l'image](https://en.ubunlog.com/ubuntu-1910-qt-sdk/)
+
+
 Une fois la compilation terminée, cliquez sur le bouton Exécuter pour lancer l'application.
 
 **Tester l'Application**
