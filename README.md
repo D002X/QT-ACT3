@@ -22,7 +22,7 @@ Il permet de se connecter à une base de données, de charger les données d'une
 
 https://www.qt.io/download-qt-installer
 
-Dans certains cas certain libraries sont manquant :
+Dans certains cas certain libraries sont manquantes :
 
 ```
 sudo apt install build-essential libgl1-mesa-dev libxkbcommon-x11-0
