@@ -26,6 +26,8 @@ https://www.qt.io/download-qt-installer
 
 *Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.*
 
+https://dev.mysql.com/downloads/installer/
+
 3. **Driver MySQL pour Qt**
 
 *Qt utilise un driver pour se connecter à MySQL. Vous devrez vous assurer que le driver QMYSQL est installé et configuré. Sur certaines distributions Linux, vous devrez peut-être installer un paquet supplémentaire comme libqt5sql5-mysql pour avoir accès à ce driver.*
