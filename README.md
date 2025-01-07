@@ -90,15 +90,18 @@ db.setPassword("Passciel#2");
 # Fonctionnement
 
 Lorsque vous exécutez le programme, voici ce qui se passe :
-
-    Connexion à la base de données MySQL : Le programme se connecte à la base de données MySQL avec les informations spécifiées dans le code source.
-
+``
+Connexion à la base de données MySQL : Le programme se connecte à la base de données MySQL avec les informations spécifiées dans le code source.
+    ``
+    ``
     Chargement des données : Une fois la connexion réussie, le programme charge les données de la table jeu à l'aide de la classe QSqlTableModel.
-
+``
+``
     Affichage des données : Les données sont affichées dans une interface graphique dans un widget QTableView.
-
+``
+``
     Interface utilisateur : La fenêtre s'affiche avec les données dans un tableau. Le tableau peut être redimensionné, et les colonnes sont ajustées automatiquement en fonction de leur contenu.
-    
+   `` 
 **Erreurs possibles**
 
 Erreur de connexion à la base de données : Si la connexion échoue, un message d'erreur détaillant la cause de l'échec sera affiché dans la sortie de débogage. 
