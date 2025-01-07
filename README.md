@@ -160,4 +160,8 @@ Lorsque vous changez la note sur QT,vous devez refaire la commande :
     Select *from jeu;
     
 Afin de voir les nouvelles notes.
+
+# Résultat attendu : 
+
+ [Capture vidéo du 2025-01-07 15-02-27.webm](https://github.com/user-attachments/assets/bbc1948a-a235-4c58-afcb-93c82bb5114f)
     
