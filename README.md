@@ -22,6 +22,12 @@ Il permet de se connecter à une base de données, de charger les données d'une
 
 https://www.qt.io/download-qt-installer
 
+Dans certains cas certain libraries sont manquant :
+
+``
+sudo apt install build-essential libgl1-mesa-dev libxkbcommon-x11-0
+``
+
 2. **MySQL**
 
 *Assurez-vous que MySQL est installé et configuré sur votre machine, et que vous avez accès à la base de données avec un utilisateur ayant les privilèges nécessaires.*
