@@ -24,7 +24,7 @@ https://www.qt.io/download-qt-installer
 
 Dans certains cas certain libraries sont manquant :
 
-``
+```
 sudo apt install build-essential libgl1-mesa-dev libxkbcommon-x11-0
 ``
 
